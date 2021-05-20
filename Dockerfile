@@ -1,3 +1,3 @@
 FROM tiangolo/uwsgi-nginx-flask:python3.8
-RUN pip install -U pytest
 COPY ./app /app
+RUN pip install -U pytest
