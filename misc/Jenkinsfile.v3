@@ -8,19 +8,19 @@ node {
    stage('test') {
      def myTestContainer = docker.image('fabianohino/teste-audiencia-api')
      myTestContainer.pull()
-     myTestContainer.inside {
+     /*myTestContainer.inside {
        sh 'pip install --only=dev'
        sh 'pip test'
-     }
+     }*/
    }
    stage('test with a DB') {
      def mysql = docker.image('mysql').run("-e MYSQL_ALLOW_EMPTY_PASSWORD=yes") 
      def myTestContainer = docker.image('fabianohino/teste-audiencia-api')
      myTestContainer.pull()
-     myTestContainer.inside("--link ${mysql.id}:mysql") { // using linking, mysql will be available at host: mysql, port: 3306
+     /*myTestContainer.inside("--link ${mysql.id}:mysql") { // using linking, mysql will be available at host: mysql, port: 3306
           sh 'pip install --only=dev' 
           sh 'pip test'                     
-     }                                   
+     }  */                                 
      mysql.stop()
    }                                     
    stage('docker build/push') {            
