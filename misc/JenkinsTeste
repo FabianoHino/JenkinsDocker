@@ -1,14 +1,14 @@
 pipeline {
   agent {
     docker {
-        image 'hashicorp/terraform:light'
+        image 'fabianohino/teste-audiencia-api:latest'
         args '-i --entrypoint='
     }
   }
   stages {
     stage('Test') {
         steps {
-            sh 'terraform --version'
+            sh 'pytest'
         }
     }
   }
