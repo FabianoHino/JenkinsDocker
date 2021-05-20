@@ -6,7 +6,7 @@ node {
      commit_id = readFile('.git/commit-id').trim()
    }
    stage('test') {
-     def myTestContainer = docker.image('fabianohino/teste-audiencia-api:latest').inside("--entrypoint=''")
+     def myTestContainer = docker.image('fabianohino/teste-audiencia-api:latest')
      myTestContainer.pull()
      myTestContainer.inside {
        sh 'pytest'
