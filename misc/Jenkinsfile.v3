@@ -7,9 +7,9 @@ node {
    }
    stage('test') {
      def myTestContainer = docker.image('fabianohino/teste-audiencia-api')
-     //myTestContainer.pull()
-     
-     myTestContainer.inside {
+     myTestContainer.pull()
+     def myTestContainers = docker.build('fabianohino/teste-audiencia-api')
+     myTestContainers.inside {
        sh 'pytest'
      }
    }
