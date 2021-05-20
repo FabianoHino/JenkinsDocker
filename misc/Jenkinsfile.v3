@@ -8,10 +8,9 @@ node {
    stage('test') {
      def myTestContainer = docker.image('fabianohino/teste-audiencia-api')
      myTestContainer.pull()
-     /*myTestContainer.inside {
-       sh 'pip install --only=dev'
-       sh 'pip test'
-     }*/
+     myTestContainer.inside {
+       sh 'pytest'
+     }
    }
    stage('test with a DB') {
      def mysql = docker.image('mysql').run("-e MYSQL_ALLOW_EMPTY_PASSWORD=yes") 
