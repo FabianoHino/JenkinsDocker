@@ -8,7 +8,7 @@ node {
    stage('test') {
      def myTestContainer = docker.image('fabianohino/teste-audiencia-api:latest')
      myTestContainer.pull()
-     myTestContainer.inside {
+     myTestContainer.inside("--entrypoint='/bin/bash'"){
        sh 'pytest'
      }
    }
