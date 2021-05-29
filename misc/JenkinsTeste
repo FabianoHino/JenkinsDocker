@@ -25,22 +25,22 @@ pipeline {
                             username: 'admin'
                         ], 
                         transfers: [
-                        sshTransfer(cleanRemote: false, 
-                        excludes: '', 
-                        execCommand: '''#!/bin/bash
-                            docker cp /home/admin/testeAudiencia/app/main.py testeAudienciaHomolog:/app/main.py
-                            docker container restart testeAudienciaHomolog
-                        ''', 
-                        execTimeout: 120000, 
-                        flatten: false, 
-                        makeEmptyDirs: true, 
-                        noDefaultExcludes: false, 
-                        patternSeparator: '[, ]+', 
-                        remoteDirectory: '/home/admin/testeAudiencia/', 
-                        remoteDirectorySDF: false, 
-                        removePrefix: '', 
-                        sourceFiles: '/var/jenkins_home/workspace/testeAudiencia/*')
-                    ], 
+                            sshTransfer(cleanRemote: false, 
+                            excludes: '', 
+                            execCommand: '''#!/bin/bash
+                                docker cp /home/admin/testeAudiencia/app/main.py testeAudienciaHomolog:/app/main.py
+                                docker container restart testeAudienciaHomolog
+                            ''', 
+                            execTimeout: 120000, 
+                            flatten: false, 
+                            makeEmptyDirs: true, 
+                            noDefaultExcludes: false, 
+                            patternSeparator: '[, ]+', 
+                            remoteDirectory: '/home/admin/testeAudiencia/app/main.py', 
+                            remoteDirectorySDF: false, 
+                            removePrefix: '', 
+                            sourceFiles: '/var/jenkins_home/workspace/testeAudiencia/app/main.py')
+                        ], 
                     usePromotionTimestamp: false, 
                     useWorkspaceInPromotion: false, 
                     verbose: false) 
