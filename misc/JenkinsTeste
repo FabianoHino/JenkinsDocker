@@ -39,7 +39,7 @@ pipeline {
                             remoteDirectory: '/home/admin/testeAudiencia/app/', 
                             remoteDirectorySDF: false, 
                             removePrefix: '', 
-                            sourceFiles: 'app/main.py')
+                            sourceFiles: 'app/*')
                         ], 
                     usePromotionTimestamp: false, 
                     useWorkspaceInPromotion: false, 
