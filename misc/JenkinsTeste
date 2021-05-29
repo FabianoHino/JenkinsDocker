@@ -28,8 +28,10 @@ pipeline {
                             sshTransfer(cleanRemote: false, 
                             excludes: '', 
                             execCommand: '''#!/bin/bash
-                                docker cp /home/admin/testeAudiencia/app/main.py testeAudienciaHomolog:/app/main.py
-                                docker container restart testeAudienciaHomolog
+                                docker build -t testeAudiencia .
+                                docker container stop testeAudiencia
+                                docker container rm testeAudiencia
+                                docker run -p 80:80 -d --name testeAudiencia testeAudienciaHomolog
                             ''', 
                             execTimeout: 120000, 
                             flatten: false, 
@@ -39,7 +41,7 @@ pipeline {
                             remoteDirectory: '/', 
                             remoteDirectorySDF: false, 
                             removePrefix: '', 
-                            sourceFiles: 'app/**/*')
+                            sourceFiles: '**/*')
                         ], 
                     usePromotionTimestamp: false, 
                     useWorkspaceInPromotion: false, 
