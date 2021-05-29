@@ -27,7 +27,7 @@ pipeline {
                         transfers: [
                             sshTransfer(cleanRemote: false, 
                             excludes: '', 
-                            execCommand: '''#!/bin/bash
+                            execCommand: '''
                                 docker build -t testeaudiencia .
                             ''', 
                             execTimeout: 120000, 
