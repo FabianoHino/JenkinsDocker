@@ -29,8 +29,8 @@ pipeline {
                             excludes: '', 
                             execCommand: '''
                                 docker build -t testeaudiencia /home/admin/testeAudiencia/
-                                docker container stop testeaudiencia
-                                docker container rm testeaudiencia
+                                docker container stop testeAudienciaHomolog
+                                docker container rm testeAudienciaHomolog
                                 docker run -p 80:80 -d --name testeAudienciaHomolog testeaudiencia
                             ''', 
                             execTimeout: 120000, 
