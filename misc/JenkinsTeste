@@ -28,7 +28,7 @@ pipeline {
                             sshTransfer(cleanRemote: false, 
                             excludes: '', 
                             execCommand: '''
-                                echo 321
+                                docker build -t testeaudiencia /home/admin/testeAudiencia/
                             ''', 
                             execTimeout: 120000, 
                             flatten: false, 
