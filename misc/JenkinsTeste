@@ -19,31 +19,7 @@ pipeline {
                 sshPublisher(publishers: [
                         sshPublisherDesc(configName: 'testeAudienciaHomologServer',
                         sshCredentials: [
-                            key: '''b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABFwAAAAdzc2gtcn
-NhAAAAAwEAAQAAAQEAwqwt+6Mnm94rY9WWyAZsCny/E51N7BaoOzscywD1wBYNeISMDine
-gEPoZa1bMTpzq0v63YC7OCZpf7vN8KEKxGgunmPKcTVIo5YguewMeEtUnyPePeMqrOr4kc
-WTyb/WeaWaCoqaZTKCaqHPtXcOm9Avom+gnGBr6z8brOfI6ei0kfqP2r24EtXsJE0eAwHs
-t1CbgXcVAHGAiJb4hkMK2nxVwiGmd1jN3QlksATpHBJiJhnh72NPVJX9efb2bAFbrL/CRx
-+UsT2szf4D/Z8Wuw/nNAAlL0pVsEMQ1si7mED4OWXn20Kk7oLk63OvI9nOwaw5mELBYl6N
-uUKzh9K7iQAAA9BCv4W+Qr+FvgAAAAdzc2gtcnNhAAABAQDCrC37oyeb3itj1ZbIBmwKfL
-8TnU3sFqg7OxzLAPXAFg14hIwOKd6AQ+hlrVsxOnOrS/rdgLs4Jml/u83woQrEaC6eY8px
-NUijliC57Ax4S1SfI9494yqs6viRxZPJv9Z5pZoKipplMoJqoc+1dw6b0C+ib6CcYGvrPx
-us58jp6LSR+o/avbgS1ewkTR4DAey3UJuBdxUAcYCIlviGQwrafFXCIaZ3WM3dCWSwBOkc
-EmImGeHvY09Ulf159vZsAVusv8JHH5SxPazN/gP9nxa7D+c0ACUvSlWwQxDWyLuYQPg5Ze
-fbQqTuguTrc68j2c7BrDmYQsFiXo25QrOH0ruJAAAAAwEAAQAAAQB9jomV3BQm3rNDj7XR
-SvsSBIVExFdGpxJYKXcXo4XdHxwPGAYw+GYueh4Avj+rz5Rc7gNeK7IUtAmlPd7EjUmhhc
-RTme8u9vvjrmdrIsikKYnpnjuv1L1oi6BIfJMmM1nEWb+xftW34UzmM3kBBEniyvJ+JNsF
-INdaAfj6mwAlhDYjC2bdiZmcrs9irlf496+H7eatMx2xobdckw57+8HIHIY+1+5cFOPDqY
-CMPOtZD+0AieZAJKfw8CKwxcpsVB3x45Qp9yCdHr3adfScmREARAJ+Q3v5ACyYMXWbFoAE
-cVp06/IA+i5YTJl1EORi7y22AdgWK0WmQIp3fyTqG+/FAAAAgQCFHCmzfSyMDzJCVWC0+u
-kx5vd7cl2Lse6RRL5msO7iOtiHkqzHLIITH1qTK1jxVhy2U7bOoYdhaW9N+f8rr117Jnej
-5x9r2rgSO5Mys+WtwkIsb6wokQ/bh/3dojApUv/mVMppsGzkNbV60/dt6RtkmdsHWputbV
-4Dw9b/JtekVwAAAIEA5dtZsR9Me5FfXsR6/9lIQB207VBawnAbCK9vwA2t+Qa8n7rRmlPo
-bZjdK0LEtg8vXpzK7Jic6WIwFcij/+fUKI957v/nIonwvnZHxpTERHwWfCVzCC9Tqu0Fec
-00sqLL1ThkwuFDyNa65bu6h9xzf3vfBn/fbBxJ+Ofe9RbObAcAAACBANjQYhoAPy9ZchHv
-UuqVmtTup/1Rl7YPiGXGKFvdWqT+Wqg0nSUPhhuFs7AIISaIIkLLC7PpMLA5wTI2NjSsRF
-iDS+fZQgL3vj3EAiUYfNb5XIV0irzbW4Px1R+gC0SErZ6prh+Dm+nhaa/yJS33Xcc81zjy
-GmDThw/fY3BIDtfvAAAAFWFkbWluQGlwLTE3Mi0zMS0yMS02MQECAwQF''', 
+                            encryptedPassphrase: '{encrypted_ssh_passphrase}',  
                             username: 'admin'
                         ], 
                         transfers: [
