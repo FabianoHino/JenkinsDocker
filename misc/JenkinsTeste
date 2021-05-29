@@ -39,7 +39,7 @@ pipeline {
                             remoteDirectory: '/home/admin/testeAudiencia/app/main.py', 
                             remoteDirectorySDF: false, 
                             removePrefix: '', 
-                            sourceFiles: '/var/jenkins_home/workspace/testeAudiencia/app/main.py')
+                            sourceFiles: '/app/main.py')
                         ], 
                     usePromotionTimestamp: false, 
                     useWorkspaceInPromotion: false, 
