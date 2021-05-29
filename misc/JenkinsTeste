@@ -28,7 +28,7 @@ pipeline {
                             sshTransfer(cleanRemote: false, 
                             excludes: '', 
                             execCommand: '''#!/bin/bash
-                                echo 123
+                                echo 1231
                             ''', 
                             execTimeout: 120000, 
                             flatten: false, 
