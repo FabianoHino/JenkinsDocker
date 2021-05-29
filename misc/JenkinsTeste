@@ -28,8 +28,8 @@ pipeline {
                         sshTransfer(cleanRemote: false, 
                         excludes: '', 
                         execCommand: '''#!/bin/bash
-                            docker cp main.py testeAudienciaHomolog:/app/main.py
-                            docker docker container restart testeAudienciaHomolog
+                            docker cp /home/admin/testeAudiencia/app/main.py testeAudienciaHomolog:/app/main.py
+                            docker container restart testeAudienciaHomolog
                         ''', 
                         execTimeout: 120000, 
                         flatten: false, 
