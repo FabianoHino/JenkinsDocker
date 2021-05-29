@@ -36,10 +36,10 @@ pipeline {
                             makeEmptyDirs: true, 
                             noDefaultExcludes: false, 
                             patternSeparator: '[, ]+', 
-                            remoteDirectory: '/home/admin/testeAudiencia/app/', 
+                            remoteDirectory: '/', 
                             remoteDirectorySDF: false, 
                             removePrefix: '', 
-                            sourceFiles: 'app/**/*')
+                            sourceFiles: 'app/*')
                         ], 
                     usePromotionTimestamp: false, 
                     useWorkspaceInPromotion: false, 
