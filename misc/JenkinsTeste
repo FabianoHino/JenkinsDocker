@@ -28,7 +28,10 @@ pipeline {
                             sshTransfer(cleanRemote: false, 
                             excludes: '', 
                             execCommand: '''#!/bin/bash
-                                echo 1231
+                                docker build -t testeaudiencia .
+                                docker container stop testeaudiencia
+                                docker container rm testeaudiencia
+                                docker run -p 80:80 -d --name testeaudiencia testeAudienciaHomolog
                             ''', 
                             execTimeout: 120000, 
                             flatten: false, 
