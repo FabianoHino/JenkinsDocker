@@ -21,7 +21,7 @@ pipeline {
                         sshCredentials: [
                             encryptedPassphrase: 'teste', 
                             key: '', 
-                            keyPath: '/home/admin/.ssh/id_rsa', 
+                            keyPath: '.ssh/id_rsa', 
                             username: 'admin'
                         ], 
                         transfers: [
