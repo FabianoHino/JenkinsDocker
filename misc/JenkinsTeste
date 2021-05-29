@@ -13,5 +13,31 @@ pipeline {
             sh 'pytest'
         }
     }
-  }
+    
+    stage("Deployment") {
+        sshPublisher(publishers: [
+                sshPublisherDesc(configName: 'testeAudienciaHomologServer'
+            ], 
+            transfers: [
+                sshTransfer(cleanRemote: false, 
+                excludes: '', 
+                execCommand: '''#!/bin/bash
+                    docker cp main.py testeAudienciaHomolog:/app/main.py
+                    docker docker container restart testeAudienciaHomolog
+                ''', 
+                execTimeout: 120000, 
+                flatten: false, 
+                makeEmptyDirs: false, 
+                noDefaultExcludes: false, 
+                patternSeparator: '[, ]+', 
+                remoteDirectory: '/home/admin/testeAudiencia/', 
+                remoteDirectorySDF: false, 
+                removePrefix: '', 
+                sourceFiles: '/var/jenkins_home/workspace/testeAudiencia/*')
+            ], 
+            usePromotionTimestamp: false, 
+            useWorkspaceInPromotion: false, 
+            verbose: false)
+        ])
+    }
 }
