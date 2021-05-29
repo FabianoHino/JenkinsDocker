@@ -19,7 +19,9 @@ pipeline {
                 sshPublisher(publishers: [
                         sshPublisherDesc(configName: 'testeAudienciaHomologServer',
                         sshCredentials: [
-                            encryptedPassphrase: 'teste',  
+                            encryptedPassphrase: 'teste', 
+                            key: '', 
+                            keyPath: '/home/admin/.ssh/id_rsa', 
                             username: 'admin'
                         ], 
                         transfers: [
